@@ -1,5 +1,4 @@
 """CPU functionality."""
-
 import sys
 
 class CPU:
@@ -7,7 +6,11 @@ class CPU:
 
     def __init__(self):
         """Construct a new CPU."""
-        pass
+        self.registers = [0] * 8
+        self.registers[7] = 0xF4
+        self.pc = 0
+        self.ram = [0] * 256
+        self.halted = False
 
     def load(self):
         """Load a program into memory."""
